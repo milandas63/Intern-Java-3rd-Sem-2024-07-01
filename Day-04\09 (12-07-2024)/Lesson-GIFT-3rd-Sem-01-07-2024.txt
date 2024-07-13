@@ -1,5 +1,6 @@
 Start date: 01-07-2024
 GIFT 3rd Semester
+Total strength: 56
 GitHub-URL: https://github.com/milandas63/Intern-Java-3rd-Sem-2024-07-01
 
 +----------------------+
@@ -265,9 +266,9 @@ GitHub-URL: https://github.com/milandas63/Intern-Java-3rd-Sem-2024-07-01
             1, 2, 4, 8, 16, ..........
             1, 2, 3, 5, 8, 13, ..........
 
-+------------------------+
-|  Thursday, 11-07-2024  |    Day-03 (Java-03/08)
-+------------------------+
++----------------------+
+|  Friday, 12-07-2024  |    Day-04 (Java-04/09)
++----------------------+
     =   Programmes:
         1.  WAP to reverse a given string?
             If the string is "Engineering Students"
@@ -279,7 +280,8 @@ GitHub-URL: https://github.com/milandas63/Intern-Java-3rd-Sem-2024-07-01
 
             String[] items = original.split(" ");
             for(int i=0; i<items.length; i++) {
-                System.out.print(new StringBuffer(items[0]).reverse() + " ");
+                System.out.print(new StringBuffer(items[i]).reverse() + " ");
             }
 
         3.  Write the above programmes using StringTokenizer class.
+
