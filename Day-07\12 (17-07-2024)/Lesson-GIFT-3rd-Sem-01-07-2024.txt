@@ -411,3 +411,8 @@ GitHub-URL: https://github.com/milandas63/Intern-Java-3rd-Sem-2024-07-01
         |  |  +- PipedWriter
         |  |  +- PrintWriter
         |  |  +- StringWriter
+
+    =   ASSIGNMENT:
+        >   WAP to create a login screen by inputing username and password
+            from the user
+            Tips: You may use BufferedReader or Scanner class of your choice.
