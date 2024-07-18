@@ -420,3 +420,28 @@ GitHub-URL: https://github.com/milandas63/Intern-Java-3rd-Sem-2024-07-01
 +------------------------+
 |  Thursday, 18-07-2024  |    Day-08 (Java-08/13)
 +------------------------+
+    =   Java GUI (Graphical User Interface) programming
+        API (Application Programming Interface) has be provided to develop
+        GUI programs. The API comes in the packages:
+        >   java.awt
+            java.awt.event
+            javax.swing
+            javax.swing.*
+
+        >   The first thing that we need to create is a Window. The window
+            can navigate across the desktop.
+
+        >   Project-List
+            Technology: Java Swing, MySQL
+            1.  Calculator
+            2.  Contact List
+            3.  SQL Browser
+            4.  Transaction Processing System
+            5.  Tik-Tac-Toe Game
+            6.  Image Gallery
+            7.  Colour Chooser
+            8.  Digital Clock
+            9.  Notepad Spellcheck
+           10.  Video Gallery
+           11.  Multiple Choice Question (MCQ)
+
