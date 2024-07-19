@@ -1,0 +1,466 @@
+Start date: 01-07-2024
+GIFT 3rd Semester
+Total strength: 56
+GitHub-URL: https://github.com/milandas63/Intern-Java-3rd-Sem-2024-07-01
+
++----------------------+
+|  Friday, 05-07-2024  |    Day-01 (Java-01/05)
++----------------------+
+    =   LIST OF RESERVE WORDS/KEY WORDS IN JAVA (53 words)
+        abstract    continue    for         new         switch
+        assert***   default     goto*       package     synchronized
+        boolean     do          if          private     this
+        break       double      implements  protected   throw
+        byte        else        import      public      throws
+        case        enum****    instanceof  return      transient
+        catch       extends     int         short       try
+        char        final       interface   static      void
+        class       finally     long        strictfp**  volatile
+        const*      float       native      super       while
+        null        true        false
+
+        *       not used
+        **      added in 1.2
+        ***     added in 1.4
+        ****    added in 5.0
+
+
+    =   How to declare a class?
+        [access-specifier]
+        [modifier]
+        class <className>
+        [extends <parentClass>]
+        [implements <interfaces.....>]
+        {}
+
+    =   [access-specifier]
+        1. public
+        2. protected
+        3. private
+        4. <undefined>
+
+    =   [modifier]
+        1. abstract
+        2. final
+        3. static
+        4. native
+        5. sychronized
+        6. transient
+        7. volatile
+        8. strictfp
+
+    =   class <className>
+        class is a keyword that allows to create a class.
+        Rules for creating class name:
+        1.  A class name is created using uppercase alphabetic [A-Z], lowercase alphabetic
+            [a-z], digit [0-9], special characters like dollar [$] and underscore [_]
+
+        2.  A class should start with an uppercase alphabetic character
+        3.  A class may also start with lowercase alphabetic and special characters like
+            dollar [$] and [_]
+        4.  There is no restriction imposed on the length of the name
+
+            HelloStudentOfGift3rdSemesterHowAreYou              valid
+            HelloStudentOfGift3rdSemester@HowAreYou             not valid
+            $Mercy                                              valid
+            _Underscore                                         valid
+            24praganas                                          not valid
+
+    =   [extends <parentClass>]
+        extends inherits another class called the parentClass.
+
+    =   [implements <interfaces.....>]
+        When a class is partially inherited, we use implements through an interface.
+
+    =   {}
+        The body of the class.
+        A body of the class contains, fields/global-variables, constrctors and methods/functions.
+
+    =   The loops:
+        There are 4 types of loops in Java:
+        1.  for([initializer]; [condition]; [incrementor]) {}
+            The statements in the body of for loop executes continuously as long as the
+            condition of the loop is fulfilled.
+        2.  This loop works with array:
+            String[] days = {"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"};
+        3.  The while loop:
+            while(condition) {}
+            This will iterate as long as the condition is fulfilled.
+        4.  do loop:
+            The do loop executes at least once. After the first time it checks the condition.
+            do {} while(condition);
+    
+    =   There are 2 clauses with all the above loop
+        1.  break;      //  break, breaks out from the loop
+        2.  continue;   //  jumps to the starting point
+
+    =   WAP to print all multiplication tables between 2 and 40?
+
++-------------------------+
+|  Wednesday, 10-07-2024  |    Day-02 (Java-02/07)
++-------------------------+
+    =   What are the content of a class?
+        A class contains 3 members:
+        1.  Field/Global variables members
+        2.  Constructor members
+        3.  Method/Function members
+        4.  Destructor members
+        5.  Inner classes
+
+    =   What are field members?
+        class Planet {
+            // field members
+            String name;
+            double distance;
+            String color;
+
+            //  Constructors
+            public Planet() {
+            }
+            public Planet(String name, double distance, String color) {
+            }
+
+            //  Method/Function members
+            public String getName() {
+            }
+
+            public String getName(String x) {
+            }
+
+            public String getName(double d) {
+            }
+
+            public String getColor() {
+            }
+
+            public double getDistance() {
+            }
+
+            public void Planet() {
+            }
+        }
+
+    =   What is instanciation?
+    =   INSTATIATION
+        primary (object always resides in primary)
+
+              a   b   c    q    t   x       y       |
+               \  |  /      \   |    \     /        |
+        --------\-|-/--------\--|-----\---/---------|-- new
+                 \|/          \ |      \ /          |
+               String          \|       B           |
+                                A                Integer
+
+    =   There are basically 3 types of programs in Java:
+        1.  Application
+            Starts from the main method.
+            Paticularly the main method must be
+            public static void main(String args[]) {}
+        2.  Applet
+        3.  Servlet
+
+    =   How classes are arranged?
+            package-1
+            +-  class-1
+            +-  class-2
+            +-  class-3
+            package-2
+            +-  class-101
+            +-  class-201
+            +-  class-301
+            package-3
+            +-  class-1001
+            +-  class-2002
+            +-  class-3003
+
++------------------------+
+|  Thursday, 11-07-2024  |    Day-03 (Java-03/08)
++------------------------+
+    =   OOPs stands for Object Oriented Programming
+
+    =   Programming Language Paradigms:
+        https://www.geeksforgeeks.org/understanding-encapsulation-inheritance-polymorphism-abstraction-in-oops/
+        1.  Imperative programming paradigm
+            >   Procedural programming paradigm
+            >   Object oriented programming
+            >   Parallel processing approach
+        2.  Declarative programming paradigm
+            >   Logic programming paradigms
+            >   Functional programming paradigms
+            >   Database/Data driven programming approach
+
+    =   What are the features of OOPs?
+        There are 3 features:
+        1.  Encapsulation
+            When the data and the code are wrapped within one unit,
+            it is known as encapsulation. Abstraction is a part of
+            encapsulation.
+        2.  Inheritance
+            A class may inherit another class. When the child class
+            inherits the parent class, the properties of the parent
+            class becomes the property of the child class.
+
+            public class GrandFather {
+                String name = "Jawaharlal Nehru";
+            }
+
+            public class Parent extends GrandFather {
+                String name = "Rajeev Gandhi";
+            }
+
+            public class Child extends Parent {
+                public Child() {
+                    System.out.println(name);       //  Rajeev Gandhi
+                }
+            }
+
+        >   parent          child           used in Smart Talk
+            base            derived         used in C++
+            super           sub             used in Java
+
+    =   Polymorphism    - poly means many and morph means forms
+        When one or more methods/functions have same name with the
+        same class or within the parent class and the child class
+        it is known as polymorphism. Multiple entities having same
+        name is polymorphism.
+
+        There are 2 forms of polymorphism:
+        1.  Overloading of methods
+            When more than one method have same name with different
+            parameter list in the same class it is known as overloading
+        2.  Overriding of methods
+            When a method is declared in the parent class and at the
+            same time in the child class with same parameter list, it
+            is known as overriding
+
+        class Example {
+            public static void main() {
+            }
+
+            public static void main(int x) {
+            }
+
+            public static void main(String y) {
+            }
+
+            public static void main(String[] args) {
+            }
+        }
+
+        class Sample extends Example {
+            public static void main() {
+            }
+
+            public static void main(int x) {
+            }
+        }
+
+    =   The java.lang package
+        >   String
+        >   StringBuffer
+        >   StringBuilder
+
+    =   ASSIGNMENTS
+        1.  WAP to sum first 50 odd numbers?
+        2.  WAP to find 10 subsequent number is the series
+            1, 2, 4, 8, 16, ..........
+            1, 2, 3, 5, 8, 13, ..........
+
++----------------------+
+|  Friday, 12-07-2024  |    Day-04 (Java-04/09)
++----------------------+
+    =   Programmes:
+        1.  WAP to reverse a given string?
+            If the string is "Engineering Students"
+            The reverse of the string is "stnedutS gnireenignE"
+
+        2.  WAP to reverse each word within a String?
+            String original = "Quick Brown Fox Jumps Over The Lazy Dog";
+            Reverse:  kciuQ nworB xoF spmuJ revO ehT yzaL goD
+
+            String[] items = original.split(" ");
+            for(int i=0; i<items.length; i++) {
+                System.out.print(new StringBuffer(items[i]).reverse() + " ");
+            }
+
+        3.  Write the above programmes using StringTokenizer class.
+
++----------------------+
+|  Monday, 15-07-2024  |    Day-05 (Java-05/10)
++----------------------+
+
+
++-----------------------+
+|  Tuesday, 16-07-2024  |    Day-06 (Java-06/11)
++-----------------------+
+    =   Exception Handling
+    =   Exception is a class. It is a special kind of class.
+    =   Any class that inherit the Throwable is considered as an Exception class.
+    =   Their are 2 types of exception classes:
+        1.  Checked exception
+            In this type, the compiler checks:
+            a)  If the try block generates some exception which doesn't
+                have a coresponding catch clause
+            b)  If an exception is registered in the catch clause and
+                posibility of such exception is not there in the try block
+        2.  Unchecked exception
+            To make an exception unchecked, you must understand the hierarchy
+            of exception classes:
+
+            Object
+            +- Throwable
+            |  +- Exception
+            |  |  +- AclNotFoundException
+            |  |  +- ActivationException
+            |  |  +- AlreadyBoundException
+            |  |  +- ApplicationException
+            |  |  +- AWTException
+            |  |  +- BackingStoreException
+            |  |  +- BadAttributeValueExpException, BadBinaryOpValueExpException, BadLocationException, BadStringOperationException, BrokenBarrierException, CertificateException, CloneNotSupportedException, DataFormatException, DatatypeConfigurationException, DestroyFailedException, ExecutionException, ExpandVetoException, FontFormatException, GeneralSecurityException, GSSException, IllegalClassFormatException, InterruptedException, IntrospectionException, InvalidApplicationException, InvalidMidiDataException, InvalidPreferencesFormatException, InvalidTargetObjectTypeException, IOException, JAXBException, JMException, KeySelectorException, LambdaConversionException, LastOwnerException, LineUnavailableException, MarshalException, MidiUnavailableException, MimeTypeParseException, MimeTypeParseException, NamingException, NoninvertibleTransformException, NotBoundException, NotOwnerException, ParseException, ParserConfigurationException, PrinterException, PrintException, PrivilegedActionException, PropertyVetoException, ReflectiveOperationException, RefreshFailedException, RemarshalException
+            |  |  +- RuntimeException
+            |  |  |  +- AnnotationTypeMismatchException
+            |  |  |  +- ArithmeticException
+            |  |  |  +- ArrayStoreException
+            |  |  |  +- BufferOverflowException
+            |  |  |  +- BufferUnderflowException
+            |  |  |  +- CannotRedoException
+            |  |  |  +- CannotUndoException, ClassCastException, CMMException, CompletionException, ConcurrentModificationException, DataBindingException, DateTimeException, DOMException, EmptyStackException, EnumConstantNotPresentException, EventException, FileSystemAlreadyExistsException, FileSystemNotFoundException, IllegalArgumentException, IllegalMonitorStateException, IllegalPathStateException, IllegalStateException, IllformedLocaleException, ImagingOpException, IncompleteAnnotationException, IndexOutOfBoundsException, JMRuntimeException, LSException, MalformedParameterizedTypeException, MalformedParametersException, MirroredTypesException, MissingResourceException, NegativeArraySizeException, NoSuchElementException, NoSuchMechanismException, NullPointerException, ProfileDataException, ProviderException, ProviderNotFoundException, RasterFormatException, RejectedExecutionException, SecurityException, SystemException, TypeConstraintException, TypeNotPresentException, UncheckedIOException, UndeclaredThrowableException, UnknownEntityException, UnmodifiableSetException, UnsupportedOperationException, WebServiceException, WrongMethodTypeException
+            |  |  +- SAXException
+            |  |  +- ScriptException, ServerNotActiveException, SOAPException, SQLException, TimeoutException, TooManyListenersException, TransformerException, TransformException, UnmodifiableClassException, UnsupportedAudioFileException, UnsupportedCallbackException, UnsupportedFlavorException, UnsupportedLookAndFeelException, URIReferenceException, URISyntaxException, UserException, XAException, XMLParseException, XMLSignatureException, XMLStreamException, XPathException
+
+    =   Case study
+        A certain country wants to print voter-id cards for its citizen.
+        The rule for enabling voting rights are:
+            1.  The citizen must be greater than equal to 18 years old
+            2.  The citizen must be less than equal to 90 years old
+
+        Object
+        +- Throwable
+        |  +- Exception
+        |  |  +- AgeException
+        |  |  |  +- InvalidAgeException
+        |  |  |  |  +- NegativeAgeException
+        |  |  |  |  +- ZeroAgeException
+        |  |  |  +- AgeCeilingException
+        |  |  |  |  +- TooYoungAgeException
+        |  |  |  |  +- TooOldAgeException
+
+        int ages[] = {35,61,42,12,77,83,95,56,0,38,64,88,99,11,-55,59,73,0,15};
+
+    =   ASSIGNMENT:
+        String[][] users = { {"Milan","das"},
+                             {"Prateekshya","patnaik"},
+                             {"Goutam","gosain"},
+                             {"Chinmay","maharana"},
+                             {"Satyam","behera"},
+                             {"Purna","panda"},
+                             {"Soumya","mishra"} };
+
+        Create Exception classes in the following hierarchy>
+            java.lang.Object
+            +- java.lang.Throwable
+            |  +- java.lang.Exception
+            |  |  +- com.password.LoginException
+            |  |  |  +- com.password.WrongUsernameException
+            |  |  |  +- com.password.WrongPasswordException
+            |  |  +- java.lang.RuntimeException
+            |  |  |  +- com.password.InvalidLoginException
+            |  |  |  |  +- com.password.InvalidSpecialCharacterException
+            |  |  |  |  +- com.password.TooSmallUsernameException
+            |  |  |  |  +- com.password.TooLongUsernameException
+            |  |  |  |  +- com.password.WrongStartCharacterException
+            |  |  |  |  +- com.password.SpaceInUsernameException
+
+
++-------------------------+
+|  Wednesday, 17-07-2024  |    Day-07 (Java-07/12)
++-------------------------+
+    =   Java provides a complete set of API (Application Programming Interface)
+        for the purpose of IO (Input/Output)
+    =   The java.io package is provided for Input and Output
+        java.io
+        +- Byte Stream (8 bit io)
+        |  +- InputStream (abstract)
+        |  |  +- AudioInputStream
+        |  |  +- ByteArrayInputStream
+        |  |  +- FileInputStream
+        |  |  +- FilterInputStream
+        |  |  +- ObjectInputStream
+        |  |  +- PipedInputStream
+        |  |  +- SequenceInputStream
+        |  |  +- StringBufferInputStream
+        |  +- OutputStream (abstract)
+        |  |  +- ByteArrayOutputStream
+        |  |  +- FileOutputStream
+        |  |  +- FilterOutputStream
+        |  |  +- ObjectOutputStream
+        |  |  +- PipedOutputStream
+        +- Character Stream (16 bit io)
+        |  +- Reader (abstract)
+        |  |  +- BufferedReader
+        |  |  +- CharArrayReader
+        |  |  +- FilterReader
+        |  |  +- InputStreamReader
+        |  |  +- PipedReader
+        |  |  +- StringReader
+        |  +- Writer (abstract)
+        |  |  +- BufferedWriter
+        |  |  +- CharArrayWriter
+        |  |  +- FilterWriter
+        |  |  +- OutputStreamWriter
+        |  |  +- PipedWriter
+        |  |  +- PrintWriter
+        |  |  +- StringWriter
+
+    =   ASSIGNMENT:
+        >   WAP to create a login screen by inputing username and password
+            from the user
+            Tips: You may use BufferedReader or Scanner class of your choice.
+
++------------------------+
+|  Thursday, 18-07-2024  |    Day-08 (Java-08/13)
++------------------------+
+    =   Java GUI (Graphical User Interface) programming
+        API (Application Programming Interface) has be provided to develop
+        GUI programs. The API comes in the packages:
+        >   java.awt
+            java.awt.event
+            javax.swing
+            javax.swing.*
+
+        >   The first thing that we need to create is a Window. The window
+            can navigate across the desktop.
+
+        >   Project-List
+            Technology: Java Swing, MySQL
+            1.  Calculator
+            2.  Contact List
+            3.  SQL Browser
+            4.  Transaction Processing System
+            5.  Tik-Tac-Toe Game
+            6.  Image Gallery
+            7.  Colour Chooser
+            8.  Digital Clock
+            9.  Notepad Spellcheck
+           10.  Video Gallery
+           11.  Multiple Choice Question (MCQ)
+           12.  Calendar
+
++----------------------+
+|  Friday, 19-07-2024  |    Day-09 (Java-09/14)
++----------------------+
+    =   Java programmes connect to the database using JDBC. JDBC stands for
+        Java Data Base Connectivity. The most popular and free database is
+        MySQL.
+
+    =   In Java, to connect to database and fetch the data,
+        7 steps are requried:
+        1.  import java.sql.*;
+        2.  Load & Register Driver
+        3.  Create Connection
+        4.  Create Statement
+        5.  Create ResultSet
+        6.  Manipulate ResultSet
+        7.  Close ResultSet, Statement & Connection
+
+
