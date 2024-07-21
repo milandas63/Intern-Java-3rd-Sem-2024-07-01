@@ -4,8 +4,8 @@ package package1;
 public class loginpw {
     public static void main(String[] args) {
 
-        String correctUsername = "Sumit";
-        String correctPassword = "Sumit@123";
+        String correctUsername = "chandrabhanu";
+        String correctPassword = "chandrabhanu@123";
 
         Scanner scanner = new Scanner(System.in);
 
