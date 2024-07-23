@@ -1,1 +1,146 @@
 
+Navigation Menu
+
+Code
+Issues
+Pull requests
+3
+BreadcrumbsIntern-Java-3rd-Sem-2024-07-01/Assignment/Biswojit Nanda
+/Day 3/
+Directory actionsMore options
+Latest commit
+Biswo098
+Biswo098
+4 days ago
+History
+BreadcrumbsIntern-Java-3rd-Sem-2024-07-01/Assignment/Biswojit Nanda
+/Day 3/
+Folders and files
+Name	Last commit date
+parent directory
+..
+readme.txt
+4 days ago
+readme.txt
+  String[][] users = { {"Milan","das"},
+                             {"Prateekshya","patnaik"},
+                             {"Goutam","gosain"},
+                             {"Chinmay","maharana"},
+                             {"Satyam","behera"},
+                             {"Purna","panda"},
+                             {"Soumya","mishra"} };
+
+        Create Exception classes in the following hierarchy>
+            java.lang.Object
+            +- java.lang.Throwable
+            |  +- java.lang.Exception
+            |  |  +- com.password.LoginException
+            |  |  |  +- com.password.WrongUsernameException
+            |  |  |  +- com.password.WrongPasswordException
+            |  |  +- java.lang.RuntimeException
+            |  |  |  +- com.password.InvalidLoginException
+            |  |  |  |  +- com.password.InvalidSpecialCharacterException
+            |  |  |  |  +- com.password.TooSmallUsernameException
+            |  |  |  |  +- com.password.TooLongUsernameException
+            |  |  |  |  +- com.password.WrongStartCharacterException
+            |  |  |  |  +- com.password.SpaceInUsernameException
+ANS:-
+import java.util.*;
+class LoginException extends Exception {
+    public LoginException(String message) {
+        super(message);
+    }
+}
+class WrongUsernameException extends LoginException {
+    public WrongUsernameException(String message) {
+        super(message);
+    }
+}
+class WrongPasswordException extends LoginException {
+    public WrongPasswordException(String message) {
+        super(message);
+    }
+}
+class InvalidLoginException extends RuntimeException {
+    public InvalidLoginException(String message) {
+        super(message);
+    }
+}
+
+class InvalidSpecialCharacterException extends InvalidLoginException {
+    public InvalidSpecialCharacterException(String message) {
+        super(message);
+    }
+}
+class TooSmallUsernameException extends InvalidLoginException {
+    public TooSmallUsernameException(String message) {
+        super(message);
+    }
+}
+class TooLongUsernameException extends InvalidLoginException {
+    public TooLongUsernameException(String message) {
+        super(message);
+    }
+}
+class WrongStartCharacterException extends InvalidLoginException {
+    public WrongStartCharacterException(String message) {
+        super(message);
+    }
+}
+class SpaceInUsernameException extends InvalidLoginException {
+    public SpaceInUsernameException(String message) {
+        super(message);
+    }
+}
+
+
+import com.password.*;
+
+public class LoginValidator {
+    private static final String[][] users = {
+            {"Milan", "das"},
+            {"Prateekshya", "patnaik"},
+            {"Goutam", "gosain"},
+            {"Chinmay", "maharana"},
+            {"Satyam", "behera"},
+            {"Purna", "panda"},
+            {"Soumya", "mishra"}
+    };
+
+    public static void main(String[] args) {
+        String username = "Milan";
+        String password = "wrongpassword";
+
+        try {
+            validateLogin(username, password);
+            System.out.println("Login successful!");
+        } catch (LoginException e) {
+            System.out.println("Login failed: " + e.getMessage());
+        }
+    }
+
+    public static void validateLogin(String username, String password) throws LoginException {
+        boolean validUsername = false;
+        boolean validPassword = false;
+
+        for (String[] user : users) {
+            if (user[0].equals(username)) {
+                validUsername = true;
+                if (user[1].equals(password)) {
+                    validPassword = true;
+                    break;
+                } else {
+                    throw new WrongPasswordException("Incorrect password");
+                }
+            }
+        }
+
+        if (!validUsername) {
+            throw new WrongUsernameException("Username not found");
+        }
+
+        if (!validPassword) {
+            throw new WrongPasswordException("Incorrect password");
+        }
+    }
+}
