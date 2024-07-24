@@ -1,0 +1,49 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.util.ArrayList;
+
+public class ImageGallery extends JFrame {
+    private JLabel imageLabel;
+    private JButton nextButton;
+    private JButton previousButton;
+    private ArrayList<ImageIcon> images;
+    private int currentIndex;
+
+    public ImageGallery() {
+        // Initialize the frame
+        setTitle("Image Gallery");
+        setSize(800, 600);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new BorderLayout());
+
+        // Load images
+        images = new ArrayList<>();
+        loadImages("images"); // Specify the directory containing images
+
+        // Initialize components
+        imageLabel = new JLabel();
+        imageLabel.setHorizontalAlignment(JLabel.CENTER);
+        updateImage();
+
+        nextButton = new JButton("Next");
+        previousButton = new JButton("Previous");
+
+        // Add action listeners
+        nextButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                currentIndex = (currentIndex + 1) % images.size();
+                updateImage();
+            }
+        });
+
+        previousButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                currentIndex = (currentIndex - 1 + images.size()) % images.size();
+                updateImage();
+            }
+        });
