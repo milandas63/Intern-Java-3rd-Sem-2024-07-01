@@ -1,1 +1,46 @@
+import java.util.HashMap;
+import java.util.Map;
 
+public class TransitionProcessor {
+    private State currentState;
+    private Map<String, Transition> transitions = new HashMap<>();
+
+    public TransitionProcessor(State initialState) {
+        this.currentState = initialState;
+    }
+
+    public void addTransition(Transition transition) {
+        transitions.put(transition.getAction(), transition);
+    }
+
+    public void process(String action) {
+        Transition transition = transitions.get(action);
+        if (transition != null && transition.getFromState().equals(currentState)) {
+            currentState = transition.getToState();
+            System.out.println("Transitioned to state: " + currentState);
+        } else {
+            System.out.println("Invalid transition action: " + action);
+        }
+    }
+
+    public State getCurrentState() {
+        return currentState;
+    }
+
+    public static void main(String[] args) {
+        State state1 = new State("State1");
+        State state2 = new State("State2");
+        State state3 = new State("State3");
+
+        Transition t1 = new Transition(state1, state2, "toState2");
+        Transition t2 = new Transition(state2, state3, "toState3");
+
+        TransitionProcessor processor = new TransitionProcessor(state1);
+        processor.addTransition(t1);
+        processor.addTransition(t2);
+
+        processor.process("toState2"); // Transitioned to state: State2
+        processor.process("toState3"); // Transitioned to state: State3
+        processor.process("toState1"); // Invalid transition action: toState1
+    }
+}
