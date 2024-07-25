@@ -1,1 +1,142 @@
+import java.util.ArrayList;
+import java.util.List;
 
+class Account {
+    private String accountNumber;
+    private double balance;
+
+    public Account(String accountNumber, double balance) {
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+        }
+    }
+
+    public boolean withdraw(double amount) {
+        if (amount > 0 && balance >= amount) {
+            balance -= amount;
+            return true;
+        }
+        return false;
+    }
+}
+
+class Transaction {
+    private String transactionId;
+    private String accountNumber;
+    private double amount;
+    private String type; // "deposit" or "withdrawal"
+
+    public Transaction(String transactionId, String accountNumber, double amount, String type) {
+        this.transactionId = transactionId;
+        this.accountNumber = accountNumber;
+        this.amount = amount;
+        this.type = type;
+    }
+
+    public String getTransactionId() {
+        return transactionId;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public String getType() {
+        return type;
+    }
+}
+
+class TransactionProcessor {
+    private List<Account> accounts = new ArrayList<>();
+    private List<Transaction> transactions = new ArrayList<>();
+
+    public void addAccount(Account account) {
+        accounts.add(account);
+    }
+
+    public Account findAccount(String accountNumber) {
+        for (Account account : accounts) {
+            if (account.getAccountNumber().equals(accountNumber)) {
+                return account;
+            }
+        }
+        return null;
+    }
+
+    public void processTransaction(Transaction transaction) {
+        Account account = findAccount(transaction.getAccountNumber());
+        if (account != null) {
+            if (transaction.getType().equals("deposit")) {
+                account.deposit(transaction.getAmount());
+                transactions.add(transaction);
+            } else if (transaction.getType().equals("withdrawal")) {
+                if (account.withdraw(transaction.getAmount())) {
+                    transactions.add(transaction);
+                } else {
+                    System.out.println("Insufficient funds for transaction: " + transaction.getTransactionId());
+                }
+            } else {
+                System.out.println("Unknown transaction type: " + transaction.getTransactionId());
+            }
+        } else {
+            System.out.println("Account not found for transaction: " + transaction.getTransactionId());
+        }
+    }
+
+    public void printAccountDetails(String accountNumber) {
+        Account account = findAccount(accountNumber);
+        if (account != null) {
+            System.out.println("Account Number: " + account.getAccountNumber());
+            System.out.println("Balance: " + account.getBalance());
+        } else {
+            System.out.println("Account not found.");
+        }
+    }
+
+    public void printAllTransactions() {
+        for (Transaction transaction : transactions) {
+            System.out.println("Transaction ID: " + transaction.getTransactionId() + ", Account: " + transaction.getAccountNumber() +
+                    ", Amount: " + transaction.getAmount() + ", Type: " + transaction.getType());
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        TransactionProcessor tp = new TransactionProcessor();
+
+        Account account1 = new Account("12345", 1000.00);
+        Account account2 = new Account("67890", 2000.00);
+
+        tp.addAccount(account1);
+        tp.addAccount(account2);
+
+        Transaction t1 = new Transaction("T001", "12345", 500.00, "deposit");
+        Transaction t2 = new Transaction("T002", "67890", 300.00, "withdrawal");
+        Transaction t3 = new Transaction("T003", "12345", 200.00, "withdrawal");
+
+        tp.processTransaction(t1);
+        tp.processTransaction(t2);
+        tp.processTransaction(t3);
+
+        tp.printAccountDetails("12345");
+        tp.printAllTransactions();
+    }
+}
