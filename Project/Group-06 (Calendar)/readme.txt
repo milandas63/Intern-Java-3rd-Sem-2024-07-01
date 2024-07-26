@@ -1,6 +1,5 @@
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.time.DayOfWeek;
 import java.util.Scanner;
 
 public class YearCalendar {
@@ -17,19 +16,20 @@ public class YearCalendar {
             System.out.println("Sun Mon Tue Wed Thu Fri Sat");
 
             int fw = date.getDayOfWeek().getValue(); 
+            if (fw == 7) fw = 0;
 
-            for (int i = 1; i < fw; i++) {
+            for (int i = 0; i < fw; i++) {
                 System.out.print("    ");
             }
             int dm = date.lengthOfMonth();
             for (int day = 1; day <= dm; day++) {
                 System.out.printf("%3d ", day);
-                if ((day + fw - 1) % 7 == 0) {
+                if ((day + fw) % 7 == 0) {
                     System.out.println();
                 }
             }
             System.out.println();
         }
-
+        sc.close();
     }
 }
